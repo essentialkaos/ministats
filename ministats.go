@@ -15,6 +15,7 @@ import (
 
 // ////////////////////////////////////////////////////////////////////////////////// //
 
+// Data contains dataset with samples
 type Data struct {
 	items    dataset
 	capacity int
@@ -29,6 +30,7 @@ func (d dataset) Swap(i, j int)      { d[i], d[j] = d[j], d[i] }
 
 // ////////////////////////////////////////////////////////////////////////////////// //
 
+// NewData creates new Data struct
 func NewData(capacity int) *Data {
 	return &Data{capacity: capacity, mu: &sync.RWMutex{}}
 }
@@ -108,7 +110,7 @@ func (d *Data) StdDevP() uint64 {
 	return calcStdDev(d.items, true)
 }
 
-// StdDevP returns standard deviation sample from dataset
+// StdDevS returns standard deviation sample from dataset
 func (d *Data) StdDevS() uint64 {
 	if len(d.items) == 0 {
 		return 0
