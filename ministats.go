@@ -73,48 +73,76 @@ func (d *Data) Cap() int {
 
 // Min returns the smallest value in dataset
 func (d *Data) Min() uint64 {
+	d.mu.RLock()
+
 	if len(d.items) == 0 {
+		d.mu.RUnlock()
 		return 0
 	}
 
 	v, _, _ := calcBasic(d.items)
+
+	d.mu.RUnlock()
+
 	return v
 }
 
 // Max returns the largest value in dataset
 func (d *Data) Max() uint64 {
+	d.mu.RLock()
+
 	if len(d.items) == 0 {
+		d.mu.RUnlock()
 		return 0
 	}
 
 	_, v, _ := calcBasic(d.items)
+
+	d.mu.RUnlock()
+
 	return v
 }
 
 // Mean returns average value
 func (d *Data) Mean() uint64 {
+	d.mu.RLock()
+
 	if len(d.items) == 0 {
+		d.mu.RUnlock()
 		return 0
 	}
 
 	_, _, v := calcBasic(d.items)
+
+	d.mu.RUnlock()
+
 	return v
 }
 
 // StdDevP returns standard deviation population from dataset
 func (d *Data) StdDevP() uint64 {
+	d.mu.RLock()
+
 	if len(d.items) == 0 {
+		d.mu.RUnlock()
 		return 0
 	}
+
+	defer d.mu.RUnlock()
 
 	return calcStdDev(d.items, true)
 }
 
 // StdDevS returns standard deviation sample from dataset
 func (d *Data) StdDevS() uint64 {
+	d.mu.RLock()
+
 	if len(d.items) == 0 {
+		d.mu.RUnlock()
 		return 0
 	}
+
+	defer d.mu.RUnlock()
 
 	return calcStdDev(d.items, false)
 }
@@ -122,9 +150,12 @@ func (d *Data) StdDevS() uint64 {
 // Percentile returns slice with values from the dataset
 // for given percentages values
 func (d *Data) Percentile(percentages ...float64) []uint64 {
+	d.mu.RLock()
+
 	result := make([]uint64, len(percentages))
 
 	if len(d.items) == 0 {
+		d.mu.RUnlock()
 		return result
 	}
 
@@ -141,6 +172,8 @@ func (d *Data) Percentile(percentages ...float64) []uint64 {
 			result[i] = sd[pi-1]
 		}
 	}
+
+	d.mu.RUnlock()
 
 	return result
 }
