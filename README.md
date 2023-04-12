@@ -18,16 +18,10 @@
 
 ### Installation
 
-Make sure you have a working Go 1.17+ workspace (_[instructions](https://golang.org/doc/install)_), then:
-
-````bash
-go get -d github.com/essentialkaos/ministats
-````
-
-For update to latest stable release, do:
+Make sure you have a working Go 1.18+ workspace (_[instructions](https://golang.org/doc/install)_), then:
 
 ```bash
-go get -d -u github.com/essentialkaos/ministats
+go get -u github.com/essentialkaos/ministats
 ```
 
 ### Build Status
