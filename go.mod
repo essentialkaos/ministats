@@ -1,6 +1,6 @@
 module github.com/essentialkaos/ministats
 
-go 1.22.7
+go 1.23.6
 
 require github.com/essentialkaos/check v1.4.1
 
