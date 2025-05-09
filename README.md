@@ -4,7 +4,6 @@
   <a href="https://kaos.sh/g/ministats"><img src=".github/images/godoc.svg"/></a>
   <a href="https://kaos.sh/c/ministats"><img src="https://kaos.sh/c/ministats.svg" alt="Coverage Status" /></a>
   <a href="https://kaos.sh/y/ministats"><img src="https://kaos.sh/y/f06e61e8b81f4bcaa1a85a2363853a59.svg" alt="Codacy badge" /></a>
-  <br/>
   <a href="https://kaos.sh/w/ministats/ci"><img src="https://kaos.sh/w/ministats/ci.svg" alt="GitHub Actions CI Status" /></a>
   <a href="https://kaos.sh/w/ministats/codeql"><img src="https://kaos.sh/w/ministats/codeql.svg" alt="GitHub Actions CodeQL Status" /></a>
   <a href="#license"><img src=".github/images/license.svg"/></a>
@@ -25,10 +24,10 @@
 
 ### Contributing
 
-Before contributing to this project please read our [Contributing Guidelines](https://github.com/essentialkaos/contributing-guidelines#contributing-guidelines).
+Before contributing to this project please read our [Contributing Guidelines](https://github.com/essentialkaos/.github/blob/master/CONTRIBUTING.md).
 
 ### License
 
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
-<p align="center"><a href="https://essentialkaos.com"><img src="https://gh.kaos.st/ekgh.svg"/></a></p>
+<p align="center"><a href="https://kaos.dev"><img src="https://raw.githubusercontent.com/essentialkaos/.github/refs/heads/master/images/ekgh.svg"/></a></p>
